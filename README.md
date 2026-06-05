@@ -135,13 +135,54 @@ Request này dùng để lấy danh sách sản phẩm từ API. Đây là chứ
 
 - Server trả về status code `200 OK`.
 - Response body chứa danh sách sản phẩm.
-- Mỗi sản phẩm có các thông tin như `id`, `title`, `description`, `category`, `price`, `rating`, `stock`.
+- Mỗi sản phẩm có các thông tin như `id`, `title`, `description`, `category`, `price`, `rating`, `stock`...
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm thành công với status `200 OK`.
 
 ![Kết quả kiểm thử API Get All Products](./images/get-all-products.png)
 
+**7.2. Lấy chi tiết sản phẩm theo ID - Get product by ID**
 
+**Method:** GET
+
+**URL:** `https://dummyjson.com/products/1`
+
+**Dữ liệu kiểm thử:** `productId = 1`
+
+**Mục đích:**
+
+Request này dùng để lấy thông tin chi tiết của một sản phẩm theo id. Đây là chức năng thường gặp trong hệ thống thương mại điện tử khi người dùng chọn một sản phẩm để xem thông tin chi tiết.
+
+**Kết quả mong đợi:**
+
+- Server trả về status code 200 OK.
+- Response body là một object JSON.
+- Dữ liệu trả về có id = 1.
+- Sản phẩm có các thông tin chi tiết như `title`, `description`, `category`, `price`, `rating`, `stock`, `brand`,...
+
+**Kết quả thực tế:** API trả về thông tin chi tiết của sản phẩm có `id = 1` với status `200 OK`.
+![Kết quả kiểm thử API Get Products By ID](./images/get-product-by-id.png)
+
+**7.3. Tìm kiếm sản phẩm theo từ khóa - Search products**
+
+**Method:** GET
+
+**URL:** `https://dummyjson.com/products/search?q=phone`
+
+**Dữ liệu kiểm thử:** Từ khóa tìm kiếm: `phone`
+
+**Mục đích:**
+
+Request này dùng để kiểm thử chức năng tìm kiếm sản phẩm theo từ khóa. Trong hệ thống thương mại điện tử, chức năng tìm kiếm giúp người dùng nhanh chóng tìm được sản phẩm mong muốn.
+
+**Kết quả mong đợi:**
+
+- Server trả về status code `200 OK`.
+- Response body chứa danh sách sản phẩm phù hợp với từ khóa `phone`.
+- Các sản phẩm trả về có liên quan đến từ khóa tìm kiếm.
+- Response body có cấu trúc gồm danh sách products, tổng số kết quả total, số lượng bỏ qua skip và giới hạn kết quả limit.
+
+**Kết quả thực tế:** API trả về danh sách sản phẩm phù hợp với từ khóa tìm kiếm và status `200 OK`.
 
 
 
