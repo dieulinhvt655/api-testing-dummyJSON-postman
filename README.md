@@ -1,6 +1,7 @@
 # Lab 7 - API Testing with Postman
 ## Dự án: Kiểm thử API quản lý sản phẩm trong hệ thống thương mại điện tử
 
+
 ### 1. Giới thiệu
 Bài lab này được thực hiện nhằm tìm hiểu và áp dụng quy trình kiểm thử API bằng công cụ Postman. Nội dung chính của bài lab tập trung vào việc xây dựng, gửi yêu cầu và kiểm tra phản hồi của các API liên quan đến chức năng quản lý sản phẩm trong một hệ thống thương mại điện tử.
 
@@ -31,12 +32,15 @@ Trong quá trình thực hiện bài lab, các công cụ được sử dụng n
 **3.2. API sử dụng**
 API được sử dụng trong bài lab là **DummyJSON**, một REST API giả lập cung cấp dữ liệu mẫu ở định dạng JSON. API này được dùng để thực hiện kiểm thử các chức năng liên quan đến quản lý sản phẩm trong hệ thống thương mại điện tử giả lập.
 
-- Base URL: (https://dummyjson.com) 
-- Nhóm endpoint sử dụng: '/products'
+- Base URL: https://dummyjson.com
+- Nhóm endpoint sử dụng: `/products`
 
-Trong bài lab này, nhóm endpoint '/products' được sử dụng để thực hiện các thao tác kiểm thử cơ bản như lấy danh sách sản phẩm, xem chi tiết sản phẩm, thêm sản phẩm mới, cập nhật thông tin sản phẩm và xóa sản phẩm.
+Trong bài lab này, nhóm endpoint `/products` được sử dụng để thực hiện các thao tác kiểm thử cơ bản như lấy danh sách sản phẩm, xem chi tiết sản phẩm, thêm sản phẩm mới, cập nhật thông tin sản phẩm và xóa sản phẩm.
 
+**3.3. Lý do lựa chọn DummyJSON**
+DummyJSON được lựa chọn làm API kiểm thử trong bài lab vì có dữ liệu mẫu phù hợp với bài toán thương mại điện tử, đặc biệt là nhóm dữ liệu sản phẩm. API này miễn phí, dễ sử dụng, không yêu cầu đăng nhập phức tạp và trả về dữ liệu ở định dạng JSON rõ ràng, giúp quá trình quan sát và phân tích response thuận tiện hơn.
 
+Ngoài ra, DummyJSON hỗ trợ nhiều thao tác API phổ biến như lấy danh sách, xem chi tiết, tìm kiếm, thêm, cập nhật và xóa sản phẩm. Vì vậy, API này phù hợp để sinh viên thực hành kiểm thử API bằng Postman, đồng thời giúp mô phỏng tương đối đầy đủ các thao tác thường gặp trong một hệ thống quản lý sản phẩm.
 
 
 
