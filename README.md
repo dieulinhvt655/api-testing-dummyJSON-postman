@@ -24,6 +24,7 @@ Thông qua các request đã thực hiện, sinh viên tiến hành kiểm tra s
 
 ### 3. Công cụ và API sử dụng
 **3.1. Công cụ sử dụng**
+
 Trong quá trình thực hiện bài lab, các công cụ được sử dụng nhằm hỗ trợ việc kiểm thử API, lưu trữ tài liệu và trình bày kết quả kiểm thử một cách rõ ràng.
 | STT | Công cụ | Mục đích sử dụng | 
 |-----|---------|-------------|
@@ -68,7 +69,7 @@ Dự án này mô phỏng quá trình kiểm thử API cho chức năng quản l
 
 **4.2. Các chức năng được kiểm thử**
 
-Trong dự án kiểm thử API này, các chức năng liên quan đến quản lý sản phẩm được thực hiện thông qua nhóm endpoint /products của DummyJSON API. Các chức năng được kiểm thử bao gồm:
+Trong dự án kiểm thử API này, các chức năng liên quan đến quản lý sản phẩm được thực hiện thông qua nhóm endpoint `/products` của DummyJSON API. Các chức năng được kiểm thử bao gồm:
 
 | STT | Chức năng kiểm thử | Mô tả | 
 |-----|---------|-------------|
@@ -119,25 +120,26 @@ Collection được xây dựng gồm các request sau:
 
 ### 7. Nội dung kiểm thử chi tiết
 **7.1. Lấy danh sách sản phẩm - Get all products**
-Method: `GET`
 
-URL: `https://dummyjson.com/products`
+**Method**: `GET`
 
-Dữ liệu kiểm thử: `Không truyền body. Request dùng để lấy toàn bộ danh sách sản phẩm từ API.`
+**URL**: `https://dummyjson.com/products`
 
-Mục đích:
+**Dữ liệu kiểm thử**: `Không truyền body. Request dùng để lấy toàn bộ danh sách sản phẩm từ API.`
+
+**Mục đích:**
 
 Request này dùng để lấy danh sách sản phẩm từ API. Đây là chức năng thường gặp trong hệ thống thương mại điện tử, ví dụ khi người dùng truy cập trang danh sách sản phẩm.
 
-Kết quả mong đợi:
+**Kết quả mong đợi:**
 
 - Server trả về status code `200 OK`.
 - Response body chứa danh sách sản phẩm.
 - Mỗi sản phẩm có các thông tin như `id`, `title`, `description`, `category`, `price`, `rating`, `stock`.
 
-Kết quả thực tế: API trả về danh sách sản phẩm thành công với status `200 OK`.
+**Kết quả thực tế:** API trả về danh sách sản phẩm thành công với status `200 OK`.
 
-Ảnh minh họa:
+![Kết quả kiểm thử API Get All Products](./images/get-all-products.png)
 
 
 
