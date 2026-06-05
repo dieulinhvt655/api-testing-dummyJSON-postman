@@ -35,7 +35,7 @@ Trong quá trình thực hiện bài lab, các công cụ được sử dụng n
 
 API được sử dụng trong bài lab là **DummyJSON**, một REST API giả lập cung cấp dữ liệu mẫu ở định dạng JSON. API này được dùng để thực hiện kiểm thử các chức năng liên quan đến quản lý sản phẩm trong hệ thống thương mại điện tử giả lập.
 
-- Base URL: https://dummyjson.com
+- Base URL: `https://dummyjson.com`
 - Nhóm endpoint sử dụng: `/products`
 
 Trong bài lab này, nhóm endpoint `/products` được sử dụng để thực hiện các thao tác kiểm thử cơ bản như lấy danh sách sản phẩm, xem chi tiết sản phẩm, thêm sản phẩm mới, cập nhật thông tin sản phẩm và xóa sản phẩm.
@@ -84,17 +84,60 @@ Trong dự án kiểm thử API này, các chức năng liên quan đến quản
 ### 5. Danh sách các Test case
 | STT | Tên test case | Method | Endpoint | Kết quả mong đợi |
 |-----|---------------|--------|----------|------------------|
-| 1 | Lấy danh sách sản phẩm | GET | `/products` | Trả về danh sách sản phẩm, status 200 OK |
-| 2 | Lấy chi tiết sản phẩm theo ID | GET | `/products/1` | Trả về sản phẩm có id = 1, status 200 OK |
-| 3 | Tìm kiếm sản phẩm theo từ khoá | GET | `/products/search?q=phone` | Trả về danh sách sản phẩm phù hợp với từ khóa, status 200 OK |
-| 4 | Lấy danh sách sản phẩm theo danh mục | GET | `/products/category/smartphones` | Trả về danh sách sản phẩm thuộc danh mục smartphones, status 200 OK |
+| 1 | Lấy danh sách sản phẩm | GET | `/products` | Trả về danh sách sản phẩm, status `200 OK` |
+| 2 | Lấy chi tiết sản phẩm theo ID | GET | `/products/1` | Trả về sản phẩm có `id = 1`, status `200 OK` |
+| 3 | Tìm kiếm sản phẩm theo từ khoá | GET | `/products/search?q=phone` | Trả về danh sách sản phẩm phù hợp với từ khóa, status `200 OK` |
+| 4 | Lấy danh sách sản phẩm theo danh mục | GET | `/products/category/smartphones` | Trả về danh sách sản phẩm thuộc danh mục smartphones, status `200 OK` |
 | 5 | Thêm sản phẩm mới | POST | `/products/add` | Trả về dữ liệu sản phẩm vừa thêm |
 | 6 | Cập nhật toàn bộ thông tin sản phẩm | PUT | `/products/1` | Trả về dữ liệu sản phẩm sau khi cập nhật |
 | 7 | Cập nhật một phần thông tin sản phẩm | PATCH | `/products/1` | Trả về dữ liệu sản phẩm với trường đã được cập nhật |
 | 8 | Xóa sản phẩm | DELETE | `/products/1` | Trả về thông tin sản phẩm đã xóa hoặc trạng thái xóa thành công |
+| 9 | Lấy sản phẩm không tồn tại | GET | `/products/999999` | Trả về thông báo lỗi do sản phẩm không tồn tại |
+| 10 | Gọi sai endpoint | GET | `/productssss` | Trả về thông báo lỗi do endpoint không hợp lệ |
 
+### 6. Cấu trúc Collection trong Postman
+**Collection được tạo với tên:**
 
+`Lab 7 - E-commerce Product API Testing`
 
+Collection này được sử dụng để lưu trữ toàn bộ các request kiểm thử API liên quan đến chức năng quản lý sản phẩm trong hệ thống thương mại điện tử. Việc sử dụng Collection giúp các request được tổ chức rõ ràng, dễ quản lý, dễ chạy lại khi cần kiểm thử và thuận tiện khi export để nộp kèm báo cáo.
+
+Collection được xây dựng gồm các request sau:
+
+| STT | Tên request | Method | URL | 
+|-----|---------|--------|-----|
+| 1 | Get all products | GET | `https://dummyjson.com/products` |
+| 2 | Get product by ID | GET | `https://dummyjson.com/products/1` |
+| 3 | Search products by key word | GET | `https://dummyjson.com/products/search?q=phone` |
+| 4 | Get products by category | GET | `https://dummyjson.com/products/category/smartphones` |
+| 5 | Add new product | POST | `https://dummyjson.com/products/add` |
+| 6 | Update product | PUT | `https://dummyjson.com/products/1` |
+| 7 | Update product price | PATCH | `https://dummyjson.com/products/1` |
+| 8 | Delete product | DELETE | `https://dummyjson.com/products/1` |
+| 9 | Product not found | GET | `https://dummyjson.com/products/999999` |
+| 10 | Wrong endpoint | GET | `https://dummyjson.com/productsss` |
+
+### 7. Nội dung kiểm thử chi tiết
+**7.1. Lấy danh sách sản phẩm - Get all products**
+Method: `GET`
+
+URL: `https://dummyjson.com/products`
+
+Dữ liệu kiểm thử: `Không truyền body. Request dùng để lấy toàn bộ danh sách sản phẩm từ API.`
+
+Mục đích:
+
+Request này dùng để lấy danh sách sản phẩm từ API. Đây là chức năng thường gặp trong hệ thống thương mại điện tử, ví dụ khi người dùng truy cập trang danh sách sản phẩm.
+
+Kết quả mong đợi:
+
+- Server trả về status code `200 OK`.
+- Response body chứa danh sách sản phẩm.
+- Mỗi sản phẩm có các thông tin như `id`, `title`, `description`, `category`, `price`, `rating`, `stock`.
+
+Kết quả thực tế: API trả về danh sách sản phẩm thành công với status `200 OK`.
+
+Ảnh minh họa:
 
 
 
