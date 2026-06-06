@@ -216,7 +216,8 @@ Request này dùng để kiểm thử chức năng lọc sản phẩm theo danh 
 
 **Dữ liệu kiểm thử:**
 
-`{
+```javascript
+{
   "title": "Lab 7 Wireless Mouse",
   "description": "A sample product created for Postman API testing lab",
   "category": "electronics",
@@ -246,7 +247,8 @@ Request này dùng để kiểm thử chức năng lọc sản phẩm theo danh 
     "https://example.com/images/lab7-wireless-mouse.png"
   ],
   "thumbnail": "https://example.com/images/lab7-wireless-mouse-thumbnail.png"
-}`
+}
+```
 
 **Mục đích:**
 
@@ -273,7 +275,8 @@ Request này dùng để gửi dữ liệu sản phẩm mới lên server. Đây
 
 **Dữ liệu kiểm thử:**
 
-`{
+```javascript
+{
   "title": "Updated iPhone 5s Lab 7",
   "description": "This product has been fully updated using PUT method for Postman API testing lab.",
   "category": "smartphones",
@@ -303,7 +306,8 @@ Request này dùng để gửi dữ liệu sản phẩm mới lên server. Đây
     "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp"
   ],
   "thumbnail": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp"
-}`
+}
+```
 
 **Mục đích:**
 
