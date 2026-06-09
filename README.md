@@ -326,6 +326,49 @@ Request này dùng để cập nhật toàn bộ thông tin của sản phẩm c
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm đã được cập nhật sau khi gửi request thành công.
 ![Kết quả kiểm thử API Update Product](./images/update-product.png)
 
+**7.7. Cập nhật một phần thông tin sản phẩm - Update product price**
+
+**Method:** PATCH
+
+**URL:** `https://dummyjson.com/products/121`
+
+**Headers:** Content-Type: `application/json`
+
+**Dữ liệu kiểm thử:**
+
+```javascript
+{
+  "price": 179.99,
+  "stock": 60
+}
+```
+
+**Mục đích:**
+
+Request này dùng để cập nhật một phần thông tin của sản phẩm. Trong trường hợp này, em chỉ cập nhật trường price và stock. Đây là chức năng phù hợp khi quản trị viên chỉ cần sửa một số thông tin nhỏ của sản phẩm mà không cần gửi lại toàn bộ dữ liệu.
+
+**Kết quả mong đợi:**
+
+- Server xử lý request thành công.
+- Response body chứa dữ liệu sản phẩm sau khi cập nhật.
+- Dữ liệu trả về có id = 121.
+- Trường price được thay đổi thành 179.99.
+- Trường stock được thay đổi thành 60.
+
+**Ví dụ response mong đợi:**
+
+```javascript
+{
+  "id": 121,
+  "title": "iPhone 5s",
+  "price": 179.99,
+  "stock": 60
+}
+```
+
+**Kết quả thực tế:** API trả về dữ liệu sản phẩm với trường price và stock đã được cập nhật.
+![Kết quả kiểm thử API Update Product Price](./images/update-product-price.png)
+
 
 
 
