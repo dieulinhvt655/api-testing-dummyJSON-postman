@@ -476,19 +476,17 @@ Bài lab giúp em hiểu rõ hơn ý nghĩa của các HTTP method phổ biến 
 ### 11. Cấu trúc thư mục
 ```javascript
 lab-7-postman-dummyjson/
-│
-├── README.md
-├── Lab7_DummyJSON_Postman_Collection.json
-│
-└── images/
-    ├── 01_get_all_products.png
-    ├── 02_get_product_by_id.png
-    ├── 03_search_products_by_key_word.png
-    ├── 04_get_products_by_category.png
-    ├── 05_add_new_product.png
-    ├── 06_update_product.png
-    ├── 07_update_product_price.png
-    ├── 08_delete_product.png
-    ├── 09_product_not_found.png
-    └── 10_wrong_endpoint.png
+    │
+    ├── README.md
+    └── images/
+        ├── 01_get_all_products.png
+        ├── 02_get_product_by_id.png
+        ├── 03_search_products_by_key_word.png
+        ├── 04_get_products_by_category.png
+        ├── 05_add_new_product.png
+        ├── 06_update_product.png
+        ├── 07_update_product_price.png
+        ├── 08_delete_product.png
+        ├── 09_product_not_found.png
+        └── 10_wrong_endpoint.png
 ```
