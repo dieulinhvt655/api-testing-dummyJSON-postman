@@ -369,6 +369,94 @@ Request này dùng để cập nhật một phần thông tin của sản phẩm
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm với trường price và stock đã được cập nhật.
 ![Kết quả kiểm thử API Update Product Price](./images/update-product-price.png)
 
+**7.8. Xóa sản phẩm - Delete product**
+
+**Method:** DELETE
+
+**URL:** `https://dummyjson.com/products/121`
+
+**Dữ liệu kiểm thử:** `productId = 121`
+
+**Mục đích:**
+
+Request này dùng để gửi yêu cầu xóa sản phẩm có id = 121. Đây là chức năng thường gặp trong trang quản trị khi quản trị viên muốn xóa một sản phẩm khỏi hệ thống.
+
+**Kết quả mong đợi:**
+
+- Server xử lý yêu cầu xóa thành công.
+- Response body trả về thông tin sản phẩm đã xóa hoặc trạng thái xóa.
+- Dữ liệu trả về có id = 121.
+- Response body có thể xuất hiện trường thể hiện sản phẩm đã bị xóa, ví dụ isDeleted.
+- Response body có thể xuất hiện trường thời gian xóa, ví dụ deletedOn.
+
+**Ví dụ response mong đợi:**
+
+```javascript
+{
+  "id": 121,
+  "title": "iPhone 5s",
+  "isDeleted": true,
+  "deletedOn": "2026-06-05T00:00:00.000Z"
+}
+```
+
+**Kết quả thực tế:** API xử lý yêu cầu xóa sản phẩm thành công.
+![Kết quả kiểm thử API Delete Product](./images/delete-product.png)
+
+### 8. Kiểm thử trường hợp lỗi
+
+Ngoài các request thành công, em thực hiện thêm một số request lỗi để quan sát cách API phản hồi khi dữ liệu hoặc đường dẫn không hợp lệ. Việc kiểm thử các trường hợp lỗi giúp đánh giá khả năng xử lý lỗi của API và giúp người kiểm thử hiểu rõ hơn về phản hồi của server trong những tình huống không hợp lệ.
+
+**8.1. Lấy sản phẩm không tồn tại - Product not found**
+
+**Method:** GET
+
+**URL:** `https://dummyjson.com/products/999999`
+
+**Dữ liệu kiểm thử:** `productId = 999999`
+
+**Mục đích:**
+
+Request này dùng để kiểm tra phản hồi của API khi client yêu cầu thông tin chi tiết của một sản phẩm không tồn tại trong hệ thống. Đây là một trường hợp kiểm thử lỗi thường gặp, giúp xác định API có trả về thông báo phù hợp khi tài nguyên không tồn tại hay không.
+
+**Kết quả mong đợi:**
+
+- Server không trả về dữ liệu sản phẩm hợp lệ.
+- Response body trả về thông báo lỗi.
+- Nội dung lỗi thể hiện rằng sản phẩm với id được yêu cầu không tồn tại hoặc không được tìm thấy.
+
+**Ví dụ response mong đợi:**
+
+```javascript
+{
+  "message": "Product with id '999999' not found"
+}
+```
+
+**Kết quả thực tế:** API trả về thông báo lỗi cho biết sản phẩm có id = 999999 không tồn tại.
+![Kết quả kiểm thử API Product Not Found](./images/product-not-found.png)
+
+**8.2. Gọi sai endpoint - Wrong endpoint**
+
+**Method:** GET
+
+**URL:** `https://dummyjson.com/productsss`
+
+**Dữ liệu kiểm thử:** Endpoint được nhập sai: `/productsss`
+
+**Mục đích:**
+
+Request này dùng để kiểm tra phản hồi của API khi client gọi sai endpoint. Đây là trường hợp kiểm thử lỗi nhằm quan sát cách server phản hồi khi đường dẫn API không hợp lệ hoặc tài nguyên được yêu cầu không tồn tại.
+
+**Kết quả mong đợi:**
+
+- Server không trả về danh sách sản phẩm hợp lệ.
+- Response body trả về thông báo lỗi.
+- Nội dung lỗi thể hiện rằng endpoint không tồn tại hoặc route không được tìm thấy.
+
+
+**Kết quả thực tế:** API trả về thông báo lỗi do endpoint /productsss không hợp lệ.
+![Kết quả kiểm thử API Wrong endpoint](./images/wrong-endpoint.png)
 
 
 
