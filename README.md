@@ -161,7 +161,8 @@ Request này dùng để lấy thông tin chi tiết của một sản phẩm th
 - Sản phẩm có các thông tin chi tiết như `title`, `description`, `category`, `price`, `rating`, `stock`, `brand`,...
 
 **Kết quả thực tế:** API trả về thông tin chi tiết của sản phẩm có `id = 1` với status `200 OK`.
-![Kết quả kiểm thử API Get Products By ID](./images/get-product-by-id.png)
+![Kết quả kiểm thử API Get All Products](./images/get-product-by-id.png)
+
 
 **7.3. Tìm kiếm sản phẩm theo từ khóa - Search products by key word**
 
@@ -183,7 +184,8 @@ Request này dùng để kiểm thử chức năng tìm kiếm sản phẩm theo
 - Response body có cấu trúc gồm danh sách products, tổng số kết quả total, số lượng bỏ qua skip và giới hạn kết quả limit.
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm phù hợp với từ khóa tìm kiếm và status `200 OK`.
-![Kết quả kiểm thử API Get Products By Key Word](.images/search-products-by-key-word.png)
+
+
 
 **7.4. Lọc sản phẩm theo danh mục - Get products by category**
 
@@ -204,7 +206,8 @@ Request này dùng để kiểm thử chức năng lọc sản phẩm theo danh 
 - Các sản phẩm trả về có trường category tương ứng với danh mục được yêu cầu.
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm thuộc danh mục smartphones với status 200 OK.
-![Kết quả kiểm thử API Get Products By Category](.images/get-products-by-category.png)
+
+
 
 **7.5. Thêm sản phẩm mới - Add new product**
 
@@ -263,7 +266,8 @@ Request này dùng để gửi dữ liệu sản phẩm mới lên server. Đây
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm mới sau khi gửi request thành công.
 
-![Kết quả kiểm thử API Add a new product](.images/add-new-product.png)
+
+
 
 **7.6. Cập nhật toàn bộ thông tin sản phẩm - Update product**
 
@@ -322,7 +326,8 @@ Request này dùng để cập nhật toàn bộ thông tin của sản phẩm c
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm đã được cập nhật sau khi gửi request thành công.
 
-![Kết quả kiểm thử API Update product](.images/update-product.png)
+
+
 
 
 
