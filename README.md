@@ -139,7 +139,7 @@ Request này dùng để lấy danh sách sản phẩm từ API. Đây là chứ
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm thành công với status `200 OK`.
 
-![Kết quả kiểm thử API Get All Products](./images/get-all-products.png)
+![Kết quả kiểm thử API Get All Products](./images/01_get-all-products.png)
 
 **7.2. Lấy chi tiết sản phẩm theo ID - Get product by ID**
 
@@ -161,7 +161,7 @@ Request này dùng để lấy thông tin chi tiết của một sản phẩm th
 - Sản phẩm có các thông tin chi tiết như `title`, `description`, `category`, `price`, `rating`, `stock`, `brand`,...
 
 **Kết quả thực tế:** API trả về thông tin chi tiết của sản phẩm có `id = 1` với status `200 OK`.
-![Kết quả kiểm thử API Get Products By ID](./images/get-product-by-id.png)
+![Kết quả kiểm thử API Get Products By ID](./images/02_get-product-by-id.png)
 
 
 **7.3. Tìm kiếm sản phẩm theo từ khóa - Search products by key word**
@@ -184,7 +184,7 @@ Request này dùng để kiểm thử chức năng tìm kiếm sản phẩm theo
 - Response body có cấu trúc gồm danh sách products, tổng số kết quả total, số lượng bỏ qua skip và giới hạn kết quả limit.
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm phù hợp với từ khóa tìm kiếm và status `200 OK`.
-![Kết quả kiểm thử API Search Products By Key Word](./images/search-products-by-key-word.png)
+![Kết quả kiểm thử API Search Products By Key Word](./images/03_search-products-by-key-word.png)
 
 
 **7.4. Lọc sản phẩm theo danh mục - Get products by category**
@@ -206,7 +206,7 @@ Request này dùng để kiểm thử chức năng lọc sản phẩm theo danh 
 - Các sản phẩm trả về có trường category tương ứng với danh mục được yêu cầu.
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm thuộc danh mục smartphones với status 200 OK.
-![Kết quả kiểm thử API Get Products By Category](./images/get-products-by-category.png)
+![Kết quả kiểm thử API Get Products By Category](./images/04_get-products-by-category.png)
 
 
 **7.5. Thêm sản phẩm mới - Add new product**
@@ -265,7 +265,7 @@ Request này dùng để gửi dữ liệu sản phẩm mới lên server. Đây
 - Các trường như title, description, category, price, stock, brand, sku khớp với dữ liệu đã gửi.
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm mới sau khi gửi request thành công.
-![Kết quả kiểm thử API Add New Product](./images/add-new-product.png)
+![Kết quả kiểm thử API Add New Product](./images/05_add-new-product.png)
 
 
 **7.6. Cập nhật toàn bộ thông tin sản phẩm - Update product**
@@ -324,7 +324,7 @@ Request này dùng để cập nhật toàn bộ thông tin của sản phẩm c
 - Các trường như title, description, category, price, stock, brand, sku thay đổi theo dữ liệu đã gửi.
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm đã được cập nhật sau khi gửi request thành công.
-![Kết quả kiểm thử API Update Product](./images/update-product.png)
+![Kết quả kiểm thử API Update Product](./images/06_update-product.png)
 
 **7.7. Cập nhật một phần thông tin sản phẩm - Update product price**
 
@@ -367,7 +367,7 @@ Request này dùng để cập nhật một phần thông tin của sản phẩm
 ```
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm với trường price và stock đã được cập nhật.
-![Kết quả kiểm thử API Update Product Price](./images/update-product-price.png)
+![Kết quả kiểm thử API Update Product Price](./images/07_update-product-price.png)
 
 **7.8. Xóa sản phẩm - Delete product**
 
@@ -401,7 +401,7 @@ Request này dùng để gửi yêu cầu xóa sản phẩm có id = 121. Đây 
 ```
 
 **Kết quả thực tế:** API xử lý yêu cầu xóa sản phẩm thành công.
-![Kết quả kiểm thử API Delete Product](./images/delete-product.png)
+![Kết quả kiểm thử API Delete Product](./images/08_delete-product.png)
 
 ### 8. Kiểm thử trường hợp lỗi
 
@@ -434,7 +434,7 @@ Request này dùng để kiểm tra phản hồi của API khi client yêu cầu
 ```
 
 **Kết quả thực tế:** API trả về thông báo lỗi cho biết sản phẩm có id = 999999 không tồn tại.
-![Kết quả kiểm thử API Product Not Found](./images/product-not-found.png)
+![Kết quả kiểm thử API Product Not Found](./images/09_product-not-found.png)
 
 **8.2. Gọi sai endpoint - Wrong endpoint**
 
@@ -456,8 +456,39 @@ Request này dùng để kiểm tra phản hồi của API khi client gọi sai 
 
 
 **Kết quả thực tế:** API trả về thông báo lỗi do endpoint /productsss không hợp lệ.
-![Kết quả kiểm thử API Wrong endpoint](./images/wrong-endpoint.png)
+![Kết quả kiểm thử API Wrong endpoint](./images/10_wrong-endpoint.png)
 
 
+### 9. Nhận xét kết quả kiểm thử
 
+Qua quá trình kiểm thử, các request cơ bản đều được API xử lý thành công. Các request GET trả về dữ liệu sản phẩm đúng theo endpoint được gọi. Request tìm kiếm sản phẩm trả về danh sách sản phẩm phù hợp với từ khóa. Request lọc theo danh mục trả về các sản phẩm thuộc danh mục tương ứng.
 
+Các request POST, PUT, PATCH và DELETE đều trả về phản hồi cho thấy server đã xử lý yêu cầu. Tuy nhiên, do DummyJSON là API giả lập nên các thao tác thêm, sửa và xóa không làm thay đổi dữ liệu thật trên server. API chỉ mô phỏng phản hồi như một hệ thống thật để phục vụ mục đích học tập và kiểm thử.
+
+Các trường hợp lỗi giúp người kiểm thử quan sát được cách API phản hồi khi client gọi sai endpoint hoặc yêu cầu tài nguyên không tồn tại. Điều này giúp hiểu rằng kiểm thử API không chỉ kiểm tra trường hợp thành công mà còn cần kiểm tra cả trường hợp thất bại.
+
+### 10. Kết luận
+
+Thông qua bài lab này, em đã biết cách sử dụng Postman để kiểm thử API trong một bài toán gần với thực tế là quản lý sản phẩm của hệ thống thương mại điện tử. Em đã thực hành tạo Collection, tạo request, lựa chọn HTTP method, nhập URL, truyền dữ liệu JSON trong Body và đọc response trả về từ server.
+
+Bài lab giúp em hiểu rõ hơn ý nghĩa của các HTTP method phổ biến như GET, POST, PUT, PATCH và DELETE. Ngoài ra, em cũng biết cách ghi lại kết quả kiểm thử, chụp ảnh minh họa, export Postman Collection và trình bày báo cáo trong file README.md trên GitHub.
+
+### 11. Cấu trúc thư mục
+```javascript
+lab-7-postman-dummyjson/
+│
+├── README.md
+├── Lab7_DummyJSON_Postman_Collection.json
+│
+└── images/
+    ├── 01_get_all_products.png
+    ├── 02_get_product_by_id.png
+    ├── 03_search_products_by_key_word.png
+    ├── 04_get_products_by_category.png
+    ├── 05_add_new_product.png
+    ├── 06_update_product.png
+    ├── 07_update_product_price.png
+    ├── 08_delete_product.png
+    ├── 09_product_not_found.png
+    └── 10_wrong_endpoint.png
+```
