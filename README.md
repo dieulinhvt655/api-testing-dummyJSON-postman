@@ -206,7 +206,7 @@ Request này dùng để kiểm thử chức năng lọc sản phẩm theo danh 
 - Các sản phẩm trả về có trường category tương ứng với danh mục được yêu cầu.
 
 **Kết quả thực tế:** API trả về danh sách sản phẩm thuộc danh mục smartphones với status 200 OK.
-
+![Kết quả kiểm thử API Get Products By Category](./images/get-products-by-category.png)
 
 
 **7.5. Thêm sản phẩm mới - Add new product**
