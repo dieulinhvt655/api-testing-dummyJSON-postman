@@ -265,8 +265,7 @@ Request này dùng để gửi dữ liệu sản phẩm mới lên server. Đây
 - Các trường như title, description, category, price, stock, brand, sku khớp với dữ liệu đã gửi.
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm mới sau khi gửi request thành công.
-
-
+![Kết quả kiểm thử API Add New Product](./images/add-new-product.png)
 
 
 **7.6. Cập nhật toàn bộ thông tin sản phẩm - Update product**
@@ -325,7 +324,7 @@ Request này dùng để cập nhật toàn bộ thông tin của sản phẩm c
 - Các trường như title, description, category, price, stock, brand, sku thay đổi theo dữ liệu đã gửi.
 
 **Kết quả thực tế:** API trả về dữ liệu sản phẩm đã được cập nhật sau khi gửi request thành công.
-
+![Kết quả kiểm thử API Update Product](./images/update-product.png)
 
 
 
